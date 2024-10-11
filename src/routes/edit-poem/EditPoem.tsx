@@ -1,3 +1,3 @@
 export default function EditPoem() {
-  return <p>EditPoem works!</p>
+  return <p>EditPoem works!</p>;
 }

@@ -39,7 +39,7 @@
     height: 60%;
     z-index: 1;
     margin: 30px;
-    opacity: .7;
+    opacity: 0.7;
 
     transition: fill 150ms linear;
   }
