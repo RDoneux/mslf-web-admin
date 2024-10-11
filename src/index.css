@@ -1,11 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
 :root {
+  --accent-colour: #ef790d;
+  --subtle-accent-colour: #ef7a0d3b;
+  --text-colour: #ffffffde;
+  --background-colour: #0e090d;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--text-colour);
+  background-color: var(--background-colour);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,4 +31,8 @@ body,
   width: 100vw;
   height: 100vh;
   margin: 0;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
