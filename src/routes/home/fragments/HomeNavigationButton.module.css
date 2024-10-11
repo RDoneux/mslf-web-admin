@@ -1,0 +1,46 @@
+.container {
+  transition:
+    box-shadow 150ms linear,
+    transform 150ms linear;
+
+  height: 300px;
+  width: 300px;
+
+  h2 {
+    flex: 1 1 auto;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 860px) {
+    width: 90%;
+  }
+
+  @media (max-width: 540px) {
+    height: 200px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 65px -25px var(--accent-colour);
+    transform: scale(1.005);
+
+    svg {
+      fill: var(--accent-colour);
+    }
+  }
+
+  svg {
+    width: 60%;
+    height: 60%;
+    z-index: 1;
+    margin: 30px;
+    opacity: .7;
+
+    transition: fill 150ms linear;
+  }
+}
