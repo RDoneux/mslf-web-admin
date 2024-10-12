@@ -36,3 +36,15 @@ body,
   align-items: flex-start;
   justify-content: center;
 }
+
+input {
+  color: var(--text-colour);
+}
+label::focus {
+  color: var(--text-colour);
+}
+button {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
