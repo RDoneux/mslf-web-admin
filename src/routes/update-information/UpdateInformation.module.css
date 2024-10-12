@@ -1,0 +1,4 @@
+.form {
+    grid-template-rows: auto auto auto 200px 50px;
+    height: 500px;
+}

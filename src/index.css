@@ -48,3 +48,29 @@ button {
   padding-bottom: 0 !important;
 }
 
+.quill {
+  display: flex;
+  flex-direction: column;
+  .ql-picker-label {
+    color: var(--text-colour);
+  }
+  path,svg,line,polygon {
+    stroke: var(--text-colour) !important;
+    fill: var(--text-colour);
+  }
+  .ql-toolbar {
+    border: none !important;
+  }
+  .ql-container.ql-snow {
+    /* height: fit-content; */
+    overflow-x: auto;
+    padding: 8px;
+    flex: 1 1 auto;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    .ql-editor:focus-visible {
+      outline: none;
+    }
+  }
+}
