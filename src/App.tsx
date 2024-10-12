@@ -2,8 +2,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './routes/home/Home';
 import NotFound from './routes/not-found/NotFound';
 import UpdateInformation from './routes/update-information/UpdateInformation';
-import EditPoem from './routes/edit-poem/EditPoem';
 import { Toaster } from 'react-hot-toast';
+import Poems from './routes/poems/Poems';
+import CreatePoem from './routes/create-poem/CreatePoem';
+import EditPoem from './routes/edit-poem/EditPoem';
 
 function App() {
   document.documentElement.classList.add('dark');
@@ -12,7 +14,9 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/update-information" element={<UpdateInformation />} />
-        <Route path="/edit-poem" element={<EditPoem />} />
+        <Route path="/poems" element={<Poems />} />
+        <Route path="/create-poem" element={<CreatePoem />} />
+        <Route path="/edit-poem/:id" element={<EditPoem />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />
