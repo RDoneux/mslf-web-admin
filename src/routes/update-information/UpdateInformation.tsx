@@ -42,7 +42,9 @@ export default function UpdateInformation() {
     toast.promise(
       Promise.all([
         updateDoc(authorDetailsReference, { ...authorDetails }),
-        updateDoc(authorInspirationReference, {...{ inspiration: aboutText ?? '' }})
+        updateDoc(authorInspirationReference, {
+          ...{ inspiration: aboutText ?? '' }
+        })
       ]),
       {
         success: 'Homepage information updated',
@@ -78,7 +80,11 @@ export default function UpdateInformation() {
         onChange={(newValue: string) => setAuthorDetails(updateTag(newValue))}
       />
 
-      <ReactQuill theme="snow" value={aboutText ?? ''} />
+      <ReactQuill
+        theme="snow"
+        value={aboutText ?? ''}
+        onChange={(e) => setAboutText(e)}
+      />
 
       <Button
         color="orange"
