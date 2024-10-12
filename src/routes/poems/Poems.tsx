@@ -32,12 +32,12 @@ export default function Poems() {
     });
 
     console.log(poems);
-  }, []);
+  }, []); // eslint-disable-line
 
   return (
     <>
       <ul className="w-2/3 grid gap-10 mt-10">
-      <h1 className="text-5xl text-center">Create / Edit Poems</h1>
+        <h1 className="text-5xl text-center">Create / Edit Poems</h1>
         <CreatePoemLink />
         <p className="text-center">---</p>
         {poems?.map((poem: IPoem) => <EditPoemLink poem={poem} />)}
