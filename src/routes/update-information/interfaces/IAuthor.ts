@@ -1,4 +1,4 @@
 export default interface IAuthor {
-    name: string;
-    tag: string;
+  name: string;
+  tag: string;
 }

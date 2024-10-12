@@ -6,8 +6,7 @@ import EditPoem from './routes/edit-poem/EditPoem';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
-
-  document.documentElement.classList.add("dark");
+  document.documentElement.classList.add('dark');
   return (
     <BrowserRouter>
       <Routes>

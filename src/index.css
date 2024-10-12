@@ -54,7 +54,10 @@ button {
   .ql-picker-label {
     color: var(--text-colour);
   }
-  path,svg,line,polygon {
+  path,
+  svg,
+  line,
+  polygon {
     stroke: var(--text-colour) !important;
     fill: var(--text-colour);
   }
