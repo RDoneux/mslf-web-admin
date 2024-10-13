@@ -5,7 +5,9 @@ import {
   DocumentData,
   getDocs,
   QueryDocumentSnapshot,
-  QuerySnapshot
+  QuerySnapshot,
+  query,
+  where
 } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { IPoem } from '../../interfaces/IPoem';
@@ -16,8 +18,10 @@ export default function Poems() {
   const [poems, setPoems] = useState<IPoem[]>();
 
   useEffect(() => {
-    const documentReference = collection(db, 'poems');
-    getDocs(documentReference).then((snapshot: QuerySnapshot) => {
+    const collectionReference = collection(db, 'poems');
+    const q = query(collectionReference, where('__name__', '!=', 'count'));
+
+    getDocs(q).then((snapshot: QuerySnapshot) => {
       setPoems(
         snapshot.docs.map(
           (value: QueryDocumentSnapshot<DocumentData, DocumentData>) =>
