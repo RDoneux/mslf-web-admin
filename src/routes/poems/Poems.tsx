@@ -25,7 +25,7 @@ export default function Poems() {
         ) as IPoem[]
       );
     });
-  }, []); // eslint-disable-line
+  }, []);  
 
   return (
     <>

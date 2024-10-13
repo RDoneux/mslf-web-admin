@@ -51,7 +51,7 @@ export default function CreatePoem() {
 
       dispatch(overridePoem(poem));
     });
-  }, []);
+  }, [id]);
 
   async function onSubmit() {
     errors = validateForm(state);
