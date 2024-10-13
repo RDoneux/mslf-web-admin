@@ -14,7 +14,7 @@ export default function Home() {
         >
           <Fingerprint />
         </HomeNavigationButton>
-        <HomeNavigationButton title="Edit Poem" route="/edit-poem">
+        <HomeNavigationButton title="Edit Poem" route="/poems">
           <Quill />
         </HomeNavigationButton>
       </ul>

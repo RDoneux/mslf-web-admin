@@ -1,0 +1,51 @@
+.list-item {
+  width: 100%;
+  /* height: 80px; */
+  width: 100%;
+  background: #353535;
+  border-radius: 5px;
+  padding: 20px 40px 20px 30px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 40px;
+
+  transition:
+    box-shadow 150ms ease-out,
+    transform 150ms ease-out;
+
+  &:hover {
+    box-shadow: 0 0 45px -25px var(--accent-colour);
+    transform: scale(1.005);
+
+    svg,
+    p {
+      color: var(--accent-colour);
+      fill: var(--accent-colour);
+    }
+  }
+
+  a {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+  }
+
+  svg {
+    fill: var(--background-colour);
+    transition: fill 150ms ease-out;
+  }
+
+  p {
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    font-size: 28px;
+    color: var(--background-colour);
+    transition: color 150ms ease-out;
+    font-weight: 700;
+  }
+}

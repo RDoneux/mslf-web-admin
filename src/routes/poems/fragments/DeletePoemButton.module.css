@@ -1,0 +1,16 @@
+.bin-button {
+  color: var(--background-colour);
+}
+
+.dialog {
+  background-color: var(--background-colour) !important;
+
+  .header,
+  .body {
+    color: var(--text-colour);
+  }
+
+  button {
+    height: 30px;
+  }
+}
