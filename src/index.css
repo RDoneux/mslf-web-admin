@@ -33,14 +33,15 @@ body,
   margin: 0;
 
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 input {
   color: var(--text-colour);
 }
-label::focus {
+label:focus {
   color: var(--text-colour);
 }
 button {

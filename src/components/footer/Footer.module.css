@@ -1,0 +1,32 @@
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  padding: 5px 30px;
+  font-size: 12px;
+  width: 100%;
+
+  @media (max-width: 475px) {
+    padding: 5px 10px;
+  }
+  .app-title {
+    display: flex;
+    align-items: center;
+    grid-column: 1;
+    gap: 5px;
+
+    @media (max-width: 475px) {
+      grid-column: 1;
+      justify-self: flex-start;
+    }
+  }
+
+  .app-version {
+    justify-self: center;
+    grid-column: 2;
+
+    @media (max-width: 475px) {
+      grid-column: 2 / span 2;
+    }
+  }
+}
