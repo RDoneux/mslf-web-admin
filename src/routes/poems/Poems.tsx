@@ -10,6 +10,7 @@ import {
 import { db } from '../../firebase';
 import { IPoem } from '../../interfaces/IPoem';
 import EditPoemLink from './fragments/EditPoemLink';
+import BackButton from '../../components/back-button/BackButton';
 
 export default function Poems() {
   const [poems, setPoems] = useState<IPoem[]>();
@@ -24,15 +25,15 @@ export default function Poems() {
         ) as IPoem[]
       );
     });
-
   }, []); // eslint-disable-line
 
   return (
     <>
+      <BackButton />
       <ul className="w-2/3 grid gap-10 mt-10">
         <h1 className="text-5xl text-center">Create / Edit Poems</h1>
         <CreatePoemLink />
-        <hr className="border-[#353535]"/>
+        <hr className="border-[#353535]" />
         {poems?.map((poem: IPoem) => <EditPoemLink poem={poem} />)}
       </ul>
     </>

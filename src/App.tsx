@@ -5,7 +5,6 @@ import UpdateInformation from './routes/update-information/UpdateInformation';
 import { Toaster } from 'react-hot-toast';
 import Poems from './routes/poems/Poems';
 import CreatePoem from './routes/create-poem/CreatePoem';
-import EditPoem from './routes/edit-poem/EditPoem';
 
 function App() {
   document.documentElement.classList.add('dark');
@@ -16,7 +15,7 @@ function App() {
         <Route path="/update-information" element={<UpdateInformation />} />
         <Route path="/poems" element={<Poems />} />
         <Route path="/create-poem" element={<CreatePoem />} />
-        <Route path="/edit-poem/:id" element={<EditPoem />} />
+        <Route path="/create-poem/:id" element={<CreatePoem />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />

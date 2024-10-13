@@ -10,7 +10,7 @@ interface EditPoemLinkProps {
 export default function EditPoemLink({ poem }: EditPoemLinkProps) {
   return (
     <li className={styles['list-item']}>
-      <NavLink to="/create-poem">
+      <NavLink to={`/create-poem/${poem.id}`}>
         <div className={styles['icon-wrapper']}>
           <EditIcon />
         </div>

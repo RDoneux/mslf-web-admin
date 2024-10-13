@@ -5,12 +5,14 @@ interface MslfInputProps {
   onChange: (value: string) => void;
   type?: string;
   label: string;
+  error?: boolean;
 }
 
 export default function MslfInput({
   value,
   type = 'text',
   label,
+  error,
   onChange
 }: MslfInputProps) {
   return (
@@ -20,6 +22,7 @@ export default function MslfInput({
       color="orange"
       label={label}
       value={value}
+      error={error}
       className="dark:text-white dark:border-gray-600 dark:before:border-gray-500 dark:after:border-blue-500"
       labelProps={{
         className: 'dark:text-gray-400' // Label color in dark mode
