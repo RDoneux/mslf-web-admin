@@ -28,6 +28,7 @@ export default function Login() {
       await signInWithEmailAndPassword(auth, email, password);
       navigate('/');
     } catch (error: any) {
+      // eslint-disable-line
       setError(error.message);
     }
   }
@@ -58,7 +59,7 @@ export default function Login() {
         >
           Submit
         </Button>
-        {error ? <small>{error}</small> : null}
+        {error ? <small className="text-red-300">{error}</small> : null}
       </form>
     </div>
   );
