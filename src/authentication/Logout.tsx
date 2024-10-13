@@ -5,12 +5,12 @@ import { useNavigate } from 'react-router-dom';
 export default function Logout() {
   const navigate = useNavigate();
 
+  // prettier-ignore
   async function onLogout() {
     try {
       await signOut(auth);
       navigate('/login');
-    } catch (error: any) {
-      // eslint-disable-line
+    } catch (error: any) { // eslint-disable-line
       console.error('Logout error:', error.message);
     }
   }

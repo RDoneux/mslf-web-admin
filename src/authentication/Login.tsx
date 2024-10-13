@@ -23,12 +23,12 @@ export default function Login() {
     return () => unsubscribe();
   }, [navigate]);
 
+  // prettier-ignore
   async function onLogin() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       navigate('/');
-    } catch (error: any) {
-      // eslint-disable-line
+    } catch (error: any) { // eslint-disable-line
       setError(error.message);
     }
   }
