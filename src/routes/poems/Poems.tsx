@@ -17,12 +17,6 @@ export default function Poems() {
   useEffect(() => {
     const documentReference = collection(db, 'poems');
     getDocs(documentReference).then((snapshot: QuerySnapshot) => {
-      console.log(
-        snapshot.docs.map(
-          (value: QueryDocumentSnapshot<DocumentData, DocumentData>) =>
-            value.data()
-        )
-      );
       setPoems(
         snapshot.docs.map(
           (value: QueryDocumentSnapshot<DocumentData, DocumentData>) =>
@@ -31,7 +25,6 @@ export default function Poems() {
       );
     });
 
-    console.log(poems);
   }, []); // eslint-disable-line
 
   return (
@@ -39,7 +32,7 @@ export default function Poems() {
       <ul className="w-2/3 grid gap-10 mt-10">
         <h1 className="text-5xl text-center">Create / Edit Poems</h1>
         <CreatePoemLink />
-        <p className="text-center">---</p>
+        <hr className="border-[#353535]"/>
         {poems?.map((poem: IPoem) => <EditPoemLink poem={poem} />)}
       </ul>
     </>

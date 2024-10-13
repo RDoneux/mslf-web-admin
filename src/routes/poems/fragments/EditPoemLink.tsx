@@ -14,7 +14,16 @@ export default function EditPoemLink({ poem }: EditPoemLinkProps) {
         <div className={styles['icon-wrapper']}>
           <EditIcon />
         </div>
-        <p>{poem.title}</p>
+        <p className="text-3xl">{poem.title}</p>
+        <p className="text-base">
+          {poem.dateCreated?.toDate().toLocaleString('en-GB', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+          })}
+        </p>
       </NavLink>
     </li>
   );

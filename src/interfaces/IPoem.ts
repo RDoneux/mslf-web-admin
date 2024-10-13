@@ -1,3 +1,5 @@
+import { Timestamp } from "firebase/firestore";
+
 export interface IPoem {
   author: string;
   id: string;
@@ -5,5 +7,5 @@ export interface IPoem {
   content: string;
   title: string;
   timeToRead: string;
-  dateCreated: Date;
+  dateCreated: Timestamp;
 }
