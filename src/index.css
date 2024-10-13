@@ -40,7 +40,7 @@ body,
 input {
   color: var(--text-colour);
 }
-label::focus {
+label:focus {
   color: var(--text-colour);
 }
 button {
