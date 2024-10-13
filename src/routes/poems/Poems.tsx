@@ -18,6 +18,10 @@ export default function Poems() {
   const [poems, setPoems] = useState<IPoem[]>();
 
   useEffect(() => {
+    reloadPoems();
+  }, []);
+
+  function reloadPoems(): void {
     const collectionReference = collection(db, 'poems');
     const q = query(collectionReference, where('__name__', '!=', 'count'));
 
@@ -29,7 +33,7 @@ export default function Poems() {
         ) as IPoem[]
       );
     });
-  }, []);
+  }
 
   return (
     <>
@@ -38,7 +42,9 @@ export default function Poems() {
         <h1 className="text-5xl text-center">Create / Edit Poems</h1>
         <CreatePoemLink />
         <hr className="border-[#353535]" />
-        {poems?.map((poem: IPoem) => <EditPoemLink poem={poem} />)}
+        {poems?.map((poem: IPoem) => (
+          <EditPoemLink key={poem.id} poem={poem} reloadPoems={reloadPoems} />
+        ))}
       </ul>
     </>
   );

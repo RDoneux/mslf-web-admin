@@ -2,12 +2,14 @@ import { NavLink } from 'react-router-dom';
 import styles from './EditPoemLink.module.css';
 import { IPoem } from '../../../interfaces/IPoem';
 import EditIcon from './EditIcon';
+import DeletePoemButton from './DeletePoemButton';
 
 interface EditPoemLinkProps {
   poem: IPoem;
+  reloadPoems: () => void;
 }
 
-export default function EditPoemLink({ poem }: EditPoemLinkProps) {
+export default function EditPoemLink({ poem, reloadPoems }: EditPoemLinkProps) {
   return (
     <li className={styles['list-item']}>
       <NavLink to={`/create-poem/${poem.id}`}>
@@ -25,6 +27,11 @@ export default function EditPoemLink({ poem }: EditPoemLinkProps) {
           })}
         </p>
       </NavLink>
+      <DeletePoemButton
+        poemId={poem.id}
+        poemTitle={poem.title}
+        reloadPoems={reloadPoems}
+      />
     </li>
   );
 }

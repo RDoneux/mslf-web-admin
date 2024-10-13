@@ -19,7 +19,8 @@
     transform: scale(1.005);
 
     svg,
-    p {
+    p,
+    span {
       color: var(--accent-colour);
       fill: var(--accent-colour);
     }
@@ -33,9 +34,12 @@
     grid-template-rows: 40px;
   }
 
-  svg {
+  svg,
+  span {
     fill: var(--background-colour);
-    transition: fill 150ms ease-out;
+    transition:
+      fill 150ms ease-out,
+      color 150ms ease-out;
   }
 
   p {
