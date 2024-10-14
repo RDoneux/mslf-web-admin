@@ -85,3 +85,16 @@ button {
     }
   }
 }
+
+.dots {
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    color: var(--text-colour);
+    background: var(--text-colour);
+  }
+}
