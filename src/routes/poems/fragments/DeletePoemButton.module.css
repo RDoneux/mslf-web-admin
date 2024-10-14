@@ -2,6 +2,7 @@
   color: var(--background-colour);
   cursor: pointer;
   align-self: center;
+  z-index: 1;
 }
 
 .dialog {

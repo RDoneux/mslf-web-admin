@@ -11,7 +11,7 @@ interface EditPoemLinkProps {
 
 export default function EditPoemLink({ poem, reloadPoems }: EditPoemLinkProps) {
   return (
-    <li className={`${styles['list-item']} p-0 md:p-5`}>
+    <li className={`${styles['list-item']} p-0 rounded md:p-5`}>
       <NavLink to={`/create-poem/${poem.id}`} className="gap-5">
         <div className={styles['icon-wrapper']}>
           <EditIcon />
@@ -26,12 +26,12 @@ export default function EditPoemLink({ poem, reloadPoems }: EditPoemLinkProps) {
             minute: '2-digit'
           })}
         </p>
+      </NavLink>
         <DeletePoemButton
           poemId={poem.id}
           poemTitle={poem.title}
           reloadPoems={reloadPoems}
         />
-      </NavLink>
     </li>
   );
 }

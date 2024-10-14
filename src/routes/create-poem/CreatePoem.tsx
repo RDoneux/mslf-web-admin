@@ -12,7 +12,7 @@ import ReactQuill from 'react-quill';
 import { Button } from '@material-tailwind/react';
 import { IPoem } from '../../interfaces/IPoem';
 import { doc, getDoc, setDoc, Timestamp } from 'firebase/firestore';
-import { calculateReadingTime } from '../../helpers/PoemUtils';
+import { calculateReadingTime, incrementPoemCounter } from '../../helpers/PoemUtils';
 import { db } from '../../firebase';
 import toast from 'react-hot-toast';
 import validateForm from './hooks/useValidateCreatePoemForm';
@@ -72,7 +72,7 @@ export default function CreatePoem() {
 
     const documentReference = doc(db, 'poems', submitObject.id);
     toast.promise(setDoc(documentReference, submitObject), {
-      success: `'${submitObject.title}' successfully uploaded`,
+      success: () => {incrementPoemCounter(); return `'${submitObject.title}' successfully uploaded`},
       loading: `Creating '${submitObject.title}'`,
       error: `There was an error creating '${submitObject.title}'`
     });

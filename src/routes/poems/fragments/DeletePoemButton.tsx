@@ -10,6 +10,7 @@ import {
 import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../../../firebase';
 import toast from 'react-hot-toast';
+import { decrementPoemCounter } from '../../../helpers/PoemUtils';
 
 interface DeletePoemButtonProps {
   poemId: string;
@@ -29,7 +30,10 @@ export default function DeletePoemButton({
     const documentReference = doc(db, 'poems', poemId);
     toast.promise(deleteDoc(documentReference), {
       loading: `Deleting '${poemTitle}'`,
-      success: `'${poemTitle}' successfully deleted`,
+      success: () => {
+        decrementPoemCounter();
+        return `'${poemTitle}' successfully deleted`;
+      },
       error: `There was an issue deleting '${poemTitle}'`
     });
 
