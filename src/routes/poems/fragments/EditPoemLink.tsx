@@ -27,11 +27,11 @@ export default function EditPoemLink({ poem, reloadPoems }: EditPoemLinkProps) {
           })}
         </p>
       </NavLink>
-        <DeletePoemButton
-          poemId={poem.id}
-          poemTitle={poem.title}
-          reloadPoems={reloadPoems}
-        />
+      <DeletePoemButton
+        poemId={poem.id}
+        poemTitle={poem.title}
+        reloadPoems={reloadPoems}
+      />
     </li>
   );
 }

@@ -1,5 +1,5 @@
-import { doc, updateDoc, increment } from "firebase/firestore";
-import { db } from "../firebase";
+import { doc, updateDoc, increment } from 'firebase/firestore';
+import { db } from '../firebase';
 
 export function calculateReadingTime(
   text: string,
@@ -14,7 +14,7 @@ export function calculateReadingTime(
   // Convert to minutes and seconds
   let minutes = `${Math.floor(readingTimeInMinutes)}`;
 
-  if (+minutes < 1) minutes = "Less than 1"
+  if (+minutes < 1) minutes = 'Less than 1';
 
   // Return the formatted string
   return `${minutes} minute`;
@@ -22,9 +22,9 @@ export function calculateReadingTime(
 
 const documentReference = doc(db, 'poems', 'count');
 export function incrementPoemCounter() {
-  updateDoc(documentReference, { value: increment(1) })
+  updateDoc(documentReference, { value: increment(1) });
 }
 
 export function decrementPoemCounter() {
-  updateDoc(documentReference, {value: increment(-1)})
+  updateDoc(documentReference, { value: increment(-1) });
 }
