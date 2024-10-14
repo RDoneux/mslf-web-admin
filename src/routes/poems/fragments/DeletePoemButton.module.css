@@ -1,5 +1,6 @@
 .bin-button {
   color: var(--background-colour);
+  cursor: pointer;
 }
 
 .dialog {
