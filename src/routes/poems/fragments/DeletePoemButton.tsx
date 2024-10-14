@@ -85,8 +85,7 @@ export default function DeletePoemButton({
             <span>Cancel</span>
           </Button>
           <Button
-            className="rounded"
-            color="orange"
+            className="rounded  bg-[#ef790d] hover:bg-[#ef790daa]"
             onClick={onDeletePoem}
             placeholder={undefined}
             onPointerEnterCapture={undefined}

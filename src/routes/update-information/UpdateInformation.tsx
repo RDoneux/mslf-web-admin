@@ -87,13 +87,13 @@ export default function UpdateInformation() {
       />
 
       <Button
-        color="orange"
+        className="rounded h-[35px] bg-[#ef790d] hover:bg-[#ef790daa]"
         onClick={onSubmit}
         placeholder={undefined}
         onPointerEnterCapture={undefined}
         onPointerLeaveCapture={undefined}
       >
-        <p className="text-xl">Submit</p>
+        <p className="text-md">Submit</p>
       </Button>
     </form>
   );

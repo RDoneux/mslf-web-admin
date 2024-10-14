@@ -101,7 +101,7 @@ export default function CreatePoem() {
         modules={modules}
       />
       <Button
-        color="orange"
+        className="rounded h-[35px] bg-[#ef790d] hover:bg-[#ef790daa]"
         onClick={onSubmit}
         placeholder={undefined}
         onPointerEnterCapture={undefined}
