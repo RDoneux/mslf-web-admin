@@ -19,9 +19,6 @@
 
   @media (max-width: 860px) {
     width: 90%;
-  }
-
-  @media (max-width: 540px) {
     height: 200px;
   }
 
