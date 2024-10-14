@@ -43,7 +43,6 @@
     justify-self: center;
     align-self: center;
     text-align: center;
-    font-size: 28px;
     color: var(--background-colour);
     transition: color 150ms ease-out;
     font-weight: 700;

@@ -1,6 +1,7 @@
 .bin-button {
   color: var(--background-colour);
   cursor: pointer;
+  align-self: center;
 }
 
 .dialog {

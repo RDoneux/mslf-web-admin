@@ -11,13 +11,13 @@ interface EditPoemLinkProps {
 
 export default function EditPoemLink({ poem, reloadPoems }: EditPoemLinkProps) {
   return (
-    <li className={styles['list-item']}>
-      <NavLink to={`/create-poem/${poem.id}`}>
+    <li className={`${styles['list-item']} p-0 md:p-5`}>
+      <NavLink to={`/create-poem/${poem.id}`} className="gap-5">
         <div className={styles['icon-wrapper']}>
           <EditIcon />
         </div>
-        <p className="text-3xl">{poem.title}</p>
-        <p className="text-base">
+        <p className="sm:text-3xl text-start">{poem.title}</p>
+        <p className="text-base hidden lg:block">
           {poem.dateCreated?.toDate().toLocaleString('en-GB', {
             year: 'numeric',
             month: 'long',
@@ -26,12 +26,12 @@ export default function EditPoemLink({ poem, reloadPoems }: EditPoemLinkProps) {
             minute: '2-digit'
           })}
         </p>
-      </NavLink>
       <DeletePoemButton
         poemId={poem.id}
         poemTitle={poem.title}
         reloadPoems={reloadPoems}
       />
+      </NavLink>
     </li>
   );
 }

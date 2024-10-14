@@ -38,7 +38,7 @@ export default function Poems() {
   return (
     <>
       <BackButton />
-      <ul className="w-2/3 grid gap-10 mt-10">
+      <ul className="w-5/6 grid gap-10 mt-10 md:w-2/3">
         <h1 className="text-5xl text-center">Create / Edit Poems</h1>
         <CreatePoemLink />
         <hr className="border-[#353535]" />
