@@ -78,7 +78,9 @@ export default function CreatePoem() {
   }
 
   return (
-    <form className={`${styles['form']} grid grid-cols-1 gap-4 w-2/3 mt-24`}>
+    <form
+      className={`${styles['form']} grid grid-cols-1 gap-4 w-full p-5 mt-24 md:w-2/3`}
+    >
       <BackButton />
       <h1 className="text-5xl">{id ? 'Edit Poem' : 'Create Poem'}</h1>
       <MslfInput
