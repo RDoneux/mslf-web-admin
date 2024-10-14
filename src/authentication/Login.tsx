@@ -36,7 +36,7 @@ export default function Login() {
   return (
     <div className="w-full h-full flex items-center justify-center flex-col">
       <h1 className="text-5xl ">Login</h1>
-      <form className="grid gap-5 w-1/3 pt-5">
+      <form className="grid gap-5 w-full p-5 md:w-[400px] ">
         <MslfInput
           onChange={(e) => setEmail(e)}
           value={email}
