@@ -66,7 +66,9 @@ export default function UpdateInformation() {
   }
 
   return (
-    <form className={`${styles['form']} grid grid-cols-1 h-full gap-4 w-2/3 mt-24`}>
+    <form
+      className={`${styles['form']} grid grid-cols-1 h-full gap-4 w-2/3 mt-24`}
+    >
       <BackButton />
       <h1 className="text-4xl">Home Page Information</h1>
       <MslfInput

@@ -23,7 +23,8 @@
     grid-column: 2;
   }
 
-  p { /*Logout button*/
+  p {
+    /*Logout button*/
     grid-column: 3;
     justify-self: flex-end;
   }

@@ -32,7 +32,7 @@
     display: grid;
     grid-template-columns: 80px 1fr auto auto;
     grid-template-rows: 40px;
-    
+
     align-content: center;
   }
 

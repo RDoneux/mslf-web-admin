@@ -47,9 +47,9 @@ export default function Poems() {
           <ReloadPoems reloadPoems={reloadPoems} />
         </span>
         <ul className="grid gap-5 h-full overflow-y-auto overflow-x-hidden">
-        {poems?.map((poem: IPoem) => (
-          <EditPoemLink key={poem.id} poem={poem} reloadPoems={reloadPoems} />
-        ))}
+          {poems?.map((poem: IPoem) => (
+            <EditPoemLink key={poem.id} poem={poem} reloadPoems={reloadPoems} />
+          ))}
         </ul>
       </div>
     </>

@@ -77,7 +77,7 @@ export default function CreatePoem() {
       error: `There was an error creating '${submitObject.title}'`
     });
 
-    navigate('/poems')
+    navigate('/poems');
   }
 
   return (
