@@ -38,6 +38,10 @@ body,
   flex-direction: column;
 }
 
+#root {
+  justify-content: flex-start;
+}
+
 input {
   color: var(--text-colour);
 }
