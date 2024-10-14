@@ -18,11 +18,12 @@ import toast from 'react-hot-toast';
 import validateForm from './hooks/useValidateCreatePoemForm';
 import styles from './CreatePoem.module.css';
 import BackButton from '../../components/back-button/BackButton';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function CreatePoem() {
   const [state, dispatch] = useReducer(createPoemReducer, IPoemInitialState);
   const [submitted, setSubmitted] = useState<boolean>();
+  const navigate = useNavigate();
   let errors: { [key: string]: string } = {};
 
   const { id } = useParams();
@@ -75,6 +76,8 @@ export default function CreatePoem() {
       loading: `Creating '${submitObject.title}'`,
       error: `There was an error creating '${submitObject.title}'`
     });
+
+    navigate('/poems')
   }
 
   return (
