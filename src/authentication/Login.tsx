@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import MslfInput from '../components/MslfInput';
 import { Button } from '@material-tailwind/react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import quill from '/Quill.svg';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -35,7 +36,9 @@ export default function Login() {
 
   return (
     <div className="w-full h-full flex items-center justify-center flex-col">
-      <h1 className="text-5xl ">Login</h1>
+      <h1 className="text-5xl flex justify-center gap-5 flex-col">
+        <img src={quill}></img>Login
+      </h1>
       <form className="grid gap-5 w-full p-5 md:w-[400px] ">
         <MslfInput
           onChange={(e) => setEmail(e)}
@@ -50,8 +53,7 @@ export default function Login() {
           type="password"
         />
         <Button
-          className="rounded h-[35px]"
-          color="orange"
+          className="rounded h-[35px] bg-[#ef790d] hover:bg-[#ef790daa]"
           onClick={onLogin}
           placeholder={undefined}
           onPointerEnterCapture={undefined}
