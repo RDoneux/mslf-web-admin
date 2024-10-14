@@ -9,9 +9,10 @@ export function calculateReadingTime(
   const readingTimeInMinutes = wordCount / wordsPerMinute;
 
   // Convert to minutes and seconds
-  const minutes = Math.floor(readingTimeInMinutes);
-  const seconds = Math.floor((readingTimeInMinutes - minutes) * 60);
+  let minutes = `${Math.floor(readingTimeInMinutes)}`;
+
+  if(+minutes < 1) minutes = "Less than 1"
 
   // Return the formatted string
-  return `${minutes} minute(s) and ${seconds} second(s)`;
+  return `${minutes} minute`;
 }
