@@ -68,8 +68,12 @@ export default function CreatePoem() {
       return;
     }
 
+    const detailsDocumentReference = doc(db, 'author/details');
+    const author = await getDoc(detailsDocumentReference)
+    const {name} = author.data() as {name: string}
+
     const submitObject: IPoem = { ...state };
-    submitObject.author = 'James Smith';
+    submitObject.author = name
     submitObject.dateCreated = Timestamp.fromDate(new Date());
     submitObject.timeToRead = `${calculateReadingTime(submitObject.content)} read`;
     submitObject.id = crypto.randomUUID();
