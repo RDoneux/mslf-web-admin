@@ -9,6 +9,8 @@ import IsAuthenticated from './authentication/IsAuthenticated';
 import Login from './authentication/Login';
 import Footer from './components/footer/Footer';
 import styles from './App.module.css';
+import Blogs from './routes/blogs/Blogs';
+import CreateBlog from './routes/create-blog/CreateBlog';
 
 function App() {
   document.documentElement.classList.add('dark');
@@ -23,6 +25,9 @@ function App() {
             <Route path="/poems" element={<Poems />} />
             <Route path="/create-poem" element={<CreatePoem />} />
             <Route path="/create-poem/:id" element={<CreatePoem />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/create-blog" element={<CreateBlog />} />
+            <Route path="/create-blog/:id" element={<CreateBlog />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
