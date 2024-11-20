@@ -1,10 +1,10 @@
-import { Timestamp } from "firebase/firestore";
+import { Timestamp } from 'firebase/firestore';
 
 export interface IBlog {
-    author: string;
-    id: string;
-    content: string;
-    title: string;
-    timeToRead: string;
-    dateCreated: Timestamp;
+  author: string;
+  id: string;
+  content: string;
+  title: string;
+  timeToRead: string;
+  dateCreated: Timestamp;
 }
