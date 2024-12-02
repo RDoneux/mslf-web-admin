@@ -40,9 +40,9 @@ export function createBlogReducer(
     case CreateBlogReducerType.UPDATE_TITLE:
       return { ...state, title: action.payload };
     case CreateBlogReducerType.UPDATE_OVERVIEW:
-      return { ...state, overview: action.payload }
+      return { ...state, overview: action.payload };
     case CreateBlogReducerType.UPDATE_IMAGE:
-      return { ...state, image: action.payload }
+      return { ...state, image: action.payload };
     case CreateBlogReducerType.OVERRIDE_BLOG: {
       const blog: IBlog = JSON.parse(action.payload);
       return { ...blog };
@@ -65,11 +65,11 @@ export function updateTitle(title: string): CreateBlogReducerAction {
 }
 
 export function updateOverview(overview: string): CreateBlogReducerAction {
-  return { type: CreateBlogReducerType.UPDATE_OVERVIEW, payload: overview }
+  return { type: CreateBlogReducerType.UPDATE_OVERVIEW, payload: overview };
 }
 
 export function updateImage(image: string): CreateBlogReducerAction {
-  return { type: CreateBlogReducerType.UPDATE_IMAGE, payload: image }
+  return { type: CreateBlogReducerType.UPDATE_IMAGE, payload: image };
 }
 
 export function overrideBlog(blog: IBlog): CreateBlogReducerAction {
