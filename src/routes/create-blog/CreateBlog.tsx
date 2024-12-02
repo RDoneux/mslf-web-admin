@@ -14,16 +14,18 @@ import {
   IBlogInitialState,
   overrideBlog,
   updateContent,
+  updateImage,
+  updateOverview,
   updateTitle
 } from './reducers/CreateBlogReducer';
 import toast from 'react-hot-toast';
 import validateCreateBlogForm from './hooks/useValidateCreateBlogForm';
 import { calculateReadingTime } from '../../helpers/PoemUtils';
-import styles from '../create-poem/CreatePoem.module.css';
+import styles from './CreateBlog.module.css';
 import BackButton from '../../components/back-button/BackButton';
 import MslfInput from '../../components/MslfInput';
 import ReactQuill from 'react-quill';
-import { Button } from '@material-tailwind/react';
+import { Button, Textarea } from '@material-tailwind/react';
 
 export default function CreateBlog() {
   const [state, dispatch] = useReducer(createBlogReducer, IBlogInitialState);
@@ -102,11 +104,37 @@ export default function CreateBlog() {
         onChange={(e) => dispatch(updateTitle(e))}
       />
 
-      <ReactQuill
-        value={state.content}
-        onChange={(e) => dispatch(updateContent(e))}
-        modules={modules}
+      <MslfInput
+        value={state.image}
+        label="Image"
+        error={submitted && !errors?.image}
+        onChange={(e) => dispatch(updateImage(e))}
       />
+
+      <Textarea
+        label="Overview"
+        color="orange"
+        variant="standard"
+        className="dark:text-white dark:border-gray-600 dark:before:border-gray-500 dark:after:border-blue-500"
+        value={state.overview}
+        labelProps={{
+          className: 'dark:text-gray-400' // Label color in dark mode
+        }}
+        maxLength={400}
+        resize={true}
+        onChange={(e) => dispatch(updateOverview(e.target.value))}
+        onPointerEnterCapture={undefined}
+        onPointerLeaveCapture={undefined}
+      />
+
+      <label className="h-full flex flex-col">
+        Content
+        <ReactQuill
+          value={state.content}
+          onChange={(e) => dispatch(updateContent(e))}
+          modules={modules}
+        />
+      </label>
 
       <Button
         className="rounded h-[35px] bg-[#ef790d] hover:bg-[#ef790daa]"
